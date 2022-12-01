@@ -12,10 +12,11 @@ multiplatform=$3
 
 if [ "$multiplatform" == "true" ]
 then
-  echo "Creating manifest for AMD and ARM images"
+  echo "Creating manifest for AMD, ARM and S390X images"
   docker pull "${image_name}:${image_tag}-amd64"
   docker pull "${image_name}:${image_tag}-arm64"
-  docker manifest create "${image_name}:${image_tag}" "${image_name}:${image_tag}-arm64" "${image_name}:${image_tag}-amd64"
+  docker pull "${image_name}:${image_tag}-s390x
+  docker manifest create "${image_name}:${image_tag}" "${image_name}:${image_tag}-arm64" "${image_name}:${image_tag}-amd64" "${image_name}:${image_tag}-s390x"
 else
   echo "Creating manifest for the AMD image "
   docker pull "${image_name}:${image_tag}-amd64"

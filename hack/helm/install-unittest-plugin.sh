@@ -9,6 +9,8 @@ if [[ "${architecture}" == "x86_64" ]]; then
   ARCH="amd64"
 elif [[ "${architecture}" == "aarch64" ]]; then
   ARCH="arm64"
+elif [[ "${architecture}" == "s390x" ]]; then
+  ARCH="s390x"
 else
   echo "Unsupported architecture '${architecture}'"
   exit 1

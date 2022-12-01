@@ -74,6 +74,7 @@ tests:
                           values:
                             - amd64
                             - arm64
+                            - s390x
                         - key: kubernetes.io/os
                           operator: In
                           values:
@@ -85,6 +86,9 @@ tests:
               - effect: NoSchedule
                 key: kubernetes.io/arch
                 value: amd64
+              - effect: NoSchedule
+                key: kubernetes.io/arch
+                value: s390x
             containers:
               - name: webhook
                 args:
@@ -153,6 +157,9 @@ tests:
           - effect: NoSchedule
             key: kubernetes.io/arch
             value: amd64
+          - effect: NoSchedule
+            key: kubernetes.io/arch
+            value: s390x
 
   - it: should have nodeSelectors if set
     set:
@@ -222,6 +229,7 @@ tests:
                           values:
                             - amd64
                             - arm64
+                            - s390x
                         - key: kubernetes.io/os
                           operator: In
                           values:
@@ -233,6 +241,9 @@ tests:
               - effect: NoSchedule
                 key: kubernetes.io/arch
                 value: amd64
+              - effect: NoSchedule
+                key: kubernetes.io/arch
+                value: s390x
             containers:
               - name: webhook
                 args:
@@ -340,6 +351,7 @@ tests:
                           values:
                             - amd64
                             - arm64
+                            - s390x
                         - key: kubernetes.io/os
                           operator: In
                           values:
@@ -351,6 +363,9 @@ tests:
               - effect: NoSchedule
                 key: kubernetes.io/arch
                 value: amd64
+              - effect: NoSchedule
+                key: kubernetes.io/arch
+                value: s390x
             containers:
               - name: webhook
                 args:

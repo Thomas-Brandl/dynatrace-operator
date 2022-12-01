@@ -4321,6 +4321,7 @@ spec:
                     values:
                       - amd64
                       - arm64
+                      - s390x
                   - key: kubernetes.io/os
                     operator: In
                     values:
@@ -4335,6 +4336,9 @@ spec:
           effect: NoSchedule
         - key: kubernetes.io/arch
           value: amd64
+          effect: NoSchedule
+        - key: kubernetes.io/arch
+          value: s390x
           effect: NoSchedule
 ---
 # Source: dynatrace-operator/templates/Common/webhook/deployment-webhook.yaml
@@ -4409,6 +4413,7 @@ spec:
                     values:
                       - amd64
                       - arm64
+                      - s390x
                   - key: kubernetes.io/os
                     operator: In
                     values:
@@ -4467,6 +4472,9 @@ spec:
           effect: NoSchedule
         - key: kubernetes.io/arch
           value: amd64
+          effect: NoSchedule
+        - key: kubernetes.io/arch
+          value: s390x
           effect: NoSchedule
 ---
 # Source: dynatrace-operator/templates/Common/webhook/mutatingwebhookconfiguration.yaml
@@ -5087,6 +5095,9 @@ spec:
           effect: NoSchedule
         - key: kubernetes.io/arch
           value: amd64
+          effect: NoSchedule
+        - key: kubernetes.io/arch
+          value: s390x
           effect: NoSchedule
         - key: ToBeDeletedByClusterAutoscaler
           operator: Exists
